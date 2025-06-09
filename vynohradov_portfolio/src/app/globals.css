@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* 🌙 Темна тема */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply text-white;
+    background: radial-gradient(circle at 30% 30%, #0f172a, #0a0a23 70%, #04001e);
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    transition: all 0.8s ease;
+}
+
+
+
+@keyframes moveGrid {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 600px 600px; /* Рус рух фону */
+    }
+}
+
+/* Текстові кольори за замовчуванням */
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Планети - світіння */
+.bg-neon-blur {
+    background: radial-gradient(circle, #0ff0fc55, transparent 70%);
+    filter: blur(60px);
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
 }
