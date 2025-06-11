@@ -1,41 +1,97 @@
 'use client';
+
+import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa6';
 import { FiMail, FiPhone } from 'react-icons/fi';
-import { BsMoon, BsSun } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import LanguageSwitcher from './LanguageSwitcher';
 import useTheme from '../hooks/useTheme';
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 10);
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-dark text-white px-6 py-3 shadow-md flex justify-between items-center">
+        <nav className={`fixed top-0 left-0 w-full z-50 px-6 py-4 shadow-md transition-all duration-300 
+            ${scrolled ? 'bg-black/80 backdrop-blur-xl' : 'bg-black/70 backdrop-blur-xl'} text-white`}>
 
-            {/* Меню */}
-            <div className="flex gap-6 text-sm">
-                <a href="#hero" className="hover:underline underline-offset-4">Home</a>
-                <a href="#about" className="hover:underline underline-offset-4">About</a>
-                <a href="#projects" className="hover:underline underline-offset-4">Projects</a>
-                <a href="#blog" className="hover:underline underline-offset-4">Articles</a>
+            <div className="flex justify-between items-center">
+                {/* Меню для десктопа */}
+                <div className="hidden md:flex gap-6 text-base">
+                    <a href="#hero" className="hover:underline underline-offset-4">Головна</a>
+                    <a href="#about" className="hover:underline underline-offset-4">Про мене</a>
+                    <a href="#projects" className="hover:underline underline-offset-4">Проєкти</a>
+                    <a href="#contact" className="hover:underline underline-offset-4">Контакти</a>
+                </div>
+
+                {/* Іконка меню для мобільної версії */}
+                <div className="md:hidden">
+                    <button onClick={toggleMenu}><GiHamburgerMenu size={24} /></button>
+                </div>
+
+                {/* Логотип */}
+                <div className="text-xl font-bold bg-white text-black rounded-full w-11 h-11 flex items-center justify-center">
+                    NV
+                </div>
+
+                {/* Іконки та кнопка резюме */}
+                <div className="hidden md:flex gap-5 items-center text-xl">
+                    <a href="https://github.com/Nikola2112" target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="hover:text-purple-400" />
+                    </a>
+                    <a href="https://linkedin.com/in/nikolai-vynohradov" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="hover:text-purple-400" />
+                    </a>
+                    <a href="mailto:nikolaivynohradov@gmail.com ">
+                        <FiMail className="hover:text-purple-400" />
+                    </a>
+                    <a href="tel:+447786525317">
+                        <FiPhone className="hover:text-purple-400" />
+                    </a>
+                    <a href="https://t.me/nick_uk_v" target="_blank" rel="noopener noreferrer">
+                        <FaTelegram className="hover:text-purple-400" />
+                    </a>
+
+                    {/* Кнопка на резюме */}
+                    <a
+                        href="/vynohradov_portfolio/src/components/Java_Developer.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm border border-purple-500 rounded-full px-4 py-1 hover:bg-purple-500 hover:text-white transition"
+                    >
+                        Переглянути CV
+                    </a>
+
+                    <LanguageSwitcher />
+                </div>
             </div>
 
-            {/* Логотип */}
-            <div className="text-xl font-bold bg-white text-black rounded-full w-10 h-10 flex items-center justify-center">
-                NV
-            </div>
-
-            {/* Іконки */}
-            <div className="flex gap-4 items-center text-lg">
-                <a href="https://github.com" target="_blank"><FaGithub className="hover:text-neon" /></a>
-                <a href="https://linkedin.com" target="_blank"><FaLinkedin className="hover:text-neon" /></a>
-                <a href="mailto:example@gmail.com"><FiMail className="hover:text-neon" /></a>
-                <a href="tel:+380971234567"><FiPhone className="hover:text-neon" /></a>
-                <a href="https://t.me/vynohradov" target="_blank"><FaTelegram className="hover:text-neon" /></a>
-
-
-
-                <LanguageSwitcher />
-            </div>
+            {/* Мобільне меню */}
+            {menuOpen && (
+                <div className="md:hidden mt-4 flex flex-col gap-3 text-base">
+                    <a href="#hero" className="hover:underline underline-offset-4">Головна</a>
+                    <a href="#about" className="hover:underline underline-offset-4">Про мене</a>
+                    <a href="#projects" className="hover:underline underline-offset-4">Проєкти</a>
+                    <a href="#contact" className="hover:underline underline-offset-4">Контакти</a>
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline underline-offset-4"
+                    >
+                        Переглянути CV
+                    </a>
+                </div>
+            )}
         </nav>
     );
 }

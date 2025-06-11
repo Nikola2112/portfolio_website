@@ -1,4 +1,5 @@
 'use client';
+import { FiDownload, FiEye } from 'react-icons/fi';
 
 export default function About() {
     return (
@@ -61,6 +62,27 @@ export default function About() {
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                {/* Кнопки резюме */}
+                <div className="mt-16 flex flex-col sm:flex-row gap-4 text-center">
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 transition-colors duration-300 text-lg shadow-lg hover:shadow-purple-500/40"
+                    >
+                        <FiDownload className="text-2xl" />
+                        Завантажити резюме
+                    </a>
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 transition-colors duration-300 text-lg shadow-lg hover:shadow-purple-500/40"
+                    >
+                        <FiEye className="text-2xl" />
+                        Переглянути резюме
+                    </a>
                 </div>
             </div>
         </section>
