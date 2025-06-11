@@ -25,12 +25,9 @@ export default function Navbar() {
             ${scrolled ? 'bg-black/80 backdrop-blur-xl' : 'bg-black/70 backdrop-blur-xl'} text-white`}>
 
             <div className="flex justify-between items-center">
-                {/* Меню для десктопа */}
-                <div className="hidden md:flex gap-6 text-base">
-                    <a href="#hero" className="hover:underline underline-offset-4">Головна</a>
-                    <a href="#about" className="hover:underline underline-offset-4">Про мене</a>
-                    <a href="#projects" className="hover:underline underline-offset-4">Проєкти</a>
-                    <a href="#contact" className="hover:underline underline-offset-4">Контакти</a>
+                {/* Логотип */}
+                <div className="text-xl font-bold bg-white text-black rounded-full w-11 h-11 flex items-center justify-center">
+                    NV
                 </div>
 
                 {/* Іконка меню для мобільної версії */}
@@ -38,55 +35,59 @@ export default function Navbar() {
                     <button onClick={toggleMenu}><GiHamburgerMenu size={24} /></button>
                 </div>
 
-                {/* Логотип */}
-                <div className="text-xl font-bold bg-white text-black rounded-full w-11 h-11 flex items-center justify-center">
-                    NV
+                {/* Меню для десктопа */}
+                <div className="hidden md:flex gap-6 text-base">
+                    <a href="#hero" className="hover:underline underline-offset-4">Головна</a>
+                    <a href="#about" className="hover:underline underline-offset-4">Про мене</a>
+                    <a href="#projects" className="hover:underline underline-offset-4">Портфоліо</a>
+                    <a href="#contacts" className="hover:underline underline-offset-4">Контакти</a>
                 </div>
 
                 {/* Іконки та кнопка резюме */}
                 <div className="hidden md:flex gap-5 items-center text-xl">
                     <a href="https://github.com/Nikola2112" target="_blank" rel="noopener noreferrer">
-                        <FaGithub className="hover:text-purple-400" />
+                        <FaGithub className="hover:text-purple-400"/>
                     </a>
                     <a href="https://linkedin.com/in/nikolai-vynohradov" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin className="hover:text-purple-400" />
+                        <FaLinkedin className="hover:text-purple-400"/>
                     </a>
                     <a href="mailto:nikolaivynohradov@gmail.com ">
-                        <FiMail className="hover:text-purple-400" />
+                        <FiMail className="hover:text-purple-400"/>
                     </a>
                     <a href="tel:+447786525317">
-                        <FiPhone className="hover:text-purple-400" />
+                        <FiPhone className="hover:text-purple-400"/>
                     </a>
                     <a href="https://t.me/nick_uk_v" target="_blank" rel="noopener noreferrer">
-                        <FaTelegram className="hover:text-purple-400" />
+                        <FaTelegram className="hover:text-purple-400"/>
                     </a>
 
                     {/* Кнопка на резюме */}
                     <a
-                        href="/vynohradov_portfolio/src/components/Java_Developer.pdf"
+                        href="/Java_Developer.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm border border-purple-500 rounded-full px-4 py-1 hover:bg-purple-500 hover:text-white transition"
+                        className="text-sm border border-purple-500 rounded-full px-4 py-1 hover:bg-purple-500
+                        hover:text-white transition"
                     >
                         Переглянути CV
                     </a>
 
-                    <LanguageSwitcher />
+                    <LanguageSwitcher/>
                 </div>
             </div>
 
             {/* Мобільне меню */}
             {menuOpen && (
-                <div className="md:hidden mt-4 flex flex-col gap-3 text-base">
-                    <a href="#hero" className="hover:underline underline-offset-4">Головна</a>
-                    <a href="#about" className="hover:underline underline-offset-4">Про мене</a>
-                    <a href="#projects" className="hover:underline underline-offset-4">Проєкти</a>
-                    <a href="#contact" className="hover:underline underline-offset-4">Контакти</a>
+                <div className="absolute right-0 top-0 bg-black/90 w-2/3 h-full p-6 md:hidden flex flex-col gap-5 animate-slide-in">
+                    <a href="#hero" className="hover:text-purple-400 text-white">Головна</a>
+                    <a href="#about" className="hover:text-purple-400 text-white">Про мене</a>
+                    <a href="#projects" className="hover:text-purple-400 text-white">Портфоліо</a>
+                    <a href="#contacts" className="hover:text-purple-400 text-white">Контакти</a>
                     <a
-                        href="/resume.pdf"
+                        href="/Java_Developer.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:underline underline-offset-4"
+                        className="hover:text-purple-400 text-white"
                     >
                         Переглянути CV
                     </a>
