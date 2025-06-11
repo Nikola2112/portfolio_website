@@ -13,10 +13,10 @@ export default function Contact3D() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {[
-                        { icon: <FiMail />, label: 'Email', href: 'mailto:nikolay.vynohradov.dev@gmail.com', text: 'nikolay.vynohradov.dev@gmail.com' },
+                        { icon: <FiMail />, label: 'Email', href: 'mailto:nikolaivynohradov@gmail.com', text: 'nikolaivynohradov@gmail.com' },
                         { icon: <FiGithub />, label: 'GitHub', href: 'https://github.com/Nikola2112', text: 'github.com/Nikola2112' },
                         { icon: <FiLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/nikolai-vynohradov/', text: 'linkedin.com/in/nikolai-vynohradov' },
-                        { icon: <FiSend />, label: 'Telegram', href: 'https://t.me/vynohradov', text: '@vynohradov' },
+                        { icon: <FiSend />, label: 'Telegram', href: 'https://t.me/nick_uk_v', text: '@nick_uk_v' },
                     ].map((item, idx) => (
                         <a
                             key={idx}

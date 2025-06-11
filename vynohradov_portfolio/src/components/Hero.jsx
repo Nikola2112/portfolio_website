@@ -47,7 +47,7 @@ export default function Hero() {
                     <a href="https://linkedin.com/in/nikolai-vynohradov" target="_blank" rel="noreferrer" className="group bg-[#141323] p-4 rounded-full hover:bg-purple-500/10 transition">
                         <FaLinkedin className="text-purple-400 text-2xl group-hover:text-white transition" />
                     </a>
-                    <a href="https://t.me/vynohradov" target="_blank" rel="noreferrer" className="group bg-[#141323] p-4 rounded-full hover:bg-purple-500/10 transition">
+                    <a href="https://t.me/nick_uk_v" target="_blank" rel="noreferrer" className="group bg-[#141323] p-4 rounded-full hover:bg-purple-500/10 transition">
                         <FaTelegramPlane className="text-purple-400 text-2xl group-hover:text-white transition" />
                     </a>
                 </div>
