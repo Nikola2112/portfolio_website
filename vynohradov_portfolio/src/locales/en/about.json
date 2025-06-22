@@ -1,0 +1,33 @@
+
+{
+  "title": "About",
+  "intro": "I am a Java developer with over 2 years of experience building high-performance, reliable applications. I have experience with Java, Spring, Docker, Kubernetes, AWS, PostgreSQL, and CI/CD. I optimize business processes, integrate APIs, and create solutions that bring real value to users and companies.",
+  "downloadCv": "Download CV",
+  "viewCv": "View CV",
+
+  "cluesoft": {
+    "icon": "🧠",
+    "position": "Java Software Developer",
+    "company": "ClueSoft Solution · Jun 2024 – Mar 2025",
+    "bullets": [
+      "Optimised the e-commerce platform (–90 % inventory discrepancies)",
+      "Built payments & order-tracking system (–35 % time, +99 % accuracy)",
+      "Improved UX: +25 % retention, +18 % conversion",
+      "REST API integrations: –50 % downtime, +30 % speed"
+    ],
+    "stack": "Java, Spring, Hibernate, PostgreSQL, AWS, Docker, Jenkins"
+  },
+
+  "nestify": {
+    "icon": "💼",
+    "position": "Junior Java Developer",
+    "company": "Nestify UA · Sep 2022 – Jun 2024",
+    "bullets": [
+      "Automated data workflows (–80 % manual work)",
+      "Implemented e-signature system (–60 % time, 100 % compliance)",
+      "New features: +30 % engagement, +50 K monthly visits",
+      "External-API integration: +95 % data accuracy, –70 % stale data"
+    ],
+    "stack": "Java, Spring, Kafka, PostgreSQL, AWS, Keycloak, Jenkins"
+  }
+}

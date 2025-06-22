@@ -1,12 +1,26 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function LanguageSwitcher() {
-    const [lang, setLang] = useState('en');
+    const { i18n } = useTranslation();
+
+    // берём стартовый язык из i18next (он же уже знает uk/en)
+    const [lang, setLang] = useState(i18n.language || 'uk');
+
+    // синхронизируем локальное состояние, если язык изменили в другом месте
+    useEffect(() => {
+        const onLangChanged = (lng) => setLang(lng);
+        i18n.on('languageChanged', onLangChanged);
+        return () => i18n.off('languageChanged', onLangChanged);
+    }, [i18n]);
 
     const handleLangChange = (l) => {
-        setLang(l);
-        // Можеш додати реальну i18n зміну мови тут
+        if (l === lang) return;          // нечего менять
+        i18n.changeLanguage(l);          // переключаем i18next
+        localStorage.setItem('lng', l);  // запоминаем выбор
+        setLang(l);                      // обновляем кнопку
     };
 
     return (

@@ -1,0 +1,38 @@
+
+{
+  "title": "Portfolio",
+  "intro": "A selection of pet-projects that showcase my stack, practical skills, and development approach.",
+
+  "warehouse": {
+    "title": "WareHouse",
+    "desc": "Inventory-management system for warehouses. Two repositories (frontend & backend); authentication, product management, and reporting are implemented."
+  },
+  "db": {
+    "title": "DB Team Project",
+    "desc": "Team project: a system for storing, analysing, and filtering data with UI and authorisation."
+  },
+  "kube": {
+    "title": "Kube Essential",
+    "desc": "Collection of YAML templates, Helm charts, and basic scripts for deploying apps to Kubernetes clusters."
+  },
+  "sales": {
+    "title": "Sales Platform DevOps",
+    "desc": "DevOps infrastructure for a sales platform with CI/CD, logging, and monitoring."
+  },
+  "watch": {
+    "title": "WatchStore DevOps",
+    "desc": "Automated deployment for an online watch store with full monitoring and scaling."
+  },
+  "bot": {
+    "title": "Telegram Bot",
+    "desc": "Telegram bot for handling user requests, messages, and admin interfaces."
+  },
+  "currency": {
+    "title": "Telegram Bot Currency",
+    "desc": "Bot that shows current exchange rates with subscription and notifications."
+  },
+  "short": {
+    "title": "Short URL Project",
+    "desc": "URL-shortening service with redirect support and statistics."
+  }
+}

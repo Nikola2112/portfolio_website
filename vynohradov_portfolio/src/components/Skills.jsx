@@ -1,33 +1,58 @@
 'use client';
-import { FaJava, FaDocker, FaGitAlt, FaAws, FaGithub, FaGitlab } from 'react-icons/fa';
-import { SiSpring, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiKubernetes, SiJunit5, SiHibernate, SiSwagger, SiJwt, SiSpringsecurity } from 'react-icons/si';
+
+import { useTranslation } from 'react-i18next';
+import {
+    FaJava,
+    FaDocker,
+    FaGitAlt,
+    FaAws,
+    FaGithub,
+    FaGitlab,
+} from 'react-icons/fa';
+import {
+    SiSpring,
+    SiPostgresql,
+    SiMysql,
+    SiMongodb,
+    SiRedis,
+    SiKubernetes,
+    SiJunit5,
+    SiHibernate,
+    SiSwagger,
+    SiJwt,
+    SiSpringsecurity,
+} from 'react-icons/si';
 import { PiBracketsCurly } from 'react-icons/pi';
 import { BsBoxes, BsGear } from 'react-icons/bs';
 
 export default function Skills() {
+    const { t } = useTranslation('skills');
+
     const skills = [
-        { label: 'Java 8/11/17', icon: <FaJava /> },
-        { label: 'Spring / Spring Boot', icon: <SiSpring /> },
-        { label: 'Hibernate', icon: <SiHibernate /> },
-        { label: 'PostgreSQL', icon: <SiPostgresql /> },
-        { label: 'MySQL / MongoDB', icon: <SiMysql /> },
-        { label: 'Redis', icon: <SiRedis /> },
-        { label: 'Docker / Kubernetes', icon: <FaDocker /> },
-        { label: 'AWS', icon: <FaAws /> },
-        { label: 'Jenkins / CI/CD', icon: <BsGear /> },
-        { label: 'JUnit / Mockito', icon: <SiJunit5 /> },
-        { label: 'Spring Security / OAuth2 / JWT', icon: <SiSpringsecurity /> },
-        { label: 'Git / GitHub / GitLab', icon: <FaGitAlt /> },
-        { label: 'Microservices / MVC', icon: <BsBoxes /> },
-        { label: 'REST / SOAP / Swagger', icon: <SiSwagger /> },
+        { label: t('java'), icon: <FaJava /> },
+        { label: t('spring'), icon: <SiSpring /> },
+        { label: t('hibernate'), icon: <SiHibernate /> },
+        { label: t('postgres'), icon: <SiPostgresql /> },
+        { label: t('mysqlMongo'), icon: <SiMysql /> },
+        { label: t('redis'), icon: <SiRedis /> },
+        { label: t('dockerK8s'), icon: <FaDocker /> },
+        { label: t('aws'), icon: <FaAws /> },
+        { label: t('jenkins'), icon: <BsGear /> },
+        { label: t('junit'), icon: <SiJunit5 /> },
+        { label: t('security'), icon: <SiSpringsecurity /> },
+        { label: t('git'), icon: <FaGitAlt /> },
+        { label: t('microservices'), icon: <BsBoxes /> },
+        { label: t('restSwagger'), icon: <SiSwagger /> },
     ];
 
     return (
         <section id="skills" className="py-20 px-6 md:px-24 bg-[#151530] rounded-xl">
             <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Технології</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    {t('title')}
+                </h2>
                 <p className="text-gray-400 text-lg font-light">
-                    Мій стек включає інструменти, що дозволяють створювати безпечні та масштабовані серверні рішення.
+                    {t('intro')}
                 </p>
             </div>
 

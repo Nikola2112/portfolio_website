@@ -1,4 +1,5 @@
 import './globals.css';
+import '../i18n';
 import Starfield from '../components/Starfield.jsx';
 //<Starfield />
 export const metadata = {
