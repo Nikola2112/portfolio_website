@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
 import img from '@/images/Nick.jpg'; // заміни на своє фото
 import { useTranslation } from 'react-i18next';
+import '../i18n';
+
 
 export default function Hero() {
     const { t, i18n } = useTranslation('hero');

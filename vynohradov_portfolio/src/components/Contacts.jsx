@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import '../i18n';
 
 export default function Contacts() {
     const { t } = useTranslation('contacts');

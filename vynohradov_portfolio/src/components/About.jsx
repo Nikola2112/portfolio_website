@@ -2,6 +2,8 @@
 
 import { useTranslation } from 'react-i18next';
 import { FiDownload, FiEye } from 'react-icons/fi';
+import '../i18n';
+
 
 export default function About() {
     const { t, i18n } = useTranslation('about');
@@ -56,25 +58,31 @@ export default function About() {
 }
 
 function JobBlock({ data }) {
+    if (!data) return null;
+
+    const { icon, position, company, bullets = [], stack } = data;
+
     return (
         <div className="flex items-start gap-6 group">
             <div className="bg-purple-500/10 text-purple-400 p-4 rounded-full text-3xl">
-                {data.icon}
+                {icon}
             </div>
             <div>
                 <h4 className="text-2xl font-semibold text-white group-hover:text-purple-400 transition-colors duration-300">
-                    {data.position}
+                    {position}
                 </h4>
                 <p className="text-lg text-gray-400 group-hover:text-purple-300 transition-colors duration-300">
-                    {data.company}
+                    {company}
                 </p>
                 <ul className="list-disc list-inside text-gray-300 mt-3 space-y-2 text-base">
-                    {data.bullets.map((b, idx) => (
+                    {bullets.map((b, idx) => (
                         <li key={idx}>{b}</li>
                     ))}
-                    <li>
-                        <strong>Stack:</strong> {data.stack}
-                    </li>
+                    {stack && (
+                        <li>
+                            <strong>Stack:</strong> {stack}
+                        </li>
+                    )}
                 </ul>
             </div>
         </div>

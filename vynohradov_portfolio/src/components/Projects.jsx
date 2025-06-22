@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 import img from '@/images/img.png';
 import img1 from '@/images/img_1.png';

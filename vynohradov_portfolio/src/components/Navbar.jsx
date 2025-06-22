@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa6';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
+import '../i18n';
 import LanguageSwitcher from './LanguageSwitcher';
 import useTheme from '../hooks/useTheme';
 import Contacts from "@/components/Contacts";
